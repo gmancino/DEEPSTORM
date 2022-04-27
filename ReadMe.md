@@ -101,7 +101,7 @@ requirements.txt
 ```
 
 #### data
-The `data` folder contains subfolders housing the training/testing data used in the experiments. To add a new dataset...
+The `data` folder contains subfolders housing the training/testing data used in the experiments. To add a new dataset, include the folders here and modify lines containing `torch.utils.data.DataLoader` in the corresponding methods file
 
 #### helpers
 The `helpers` folder contains helper functions utilized by all methods. These are:
@@ -120,7 +120,14 @@ The `mixing_matrices` folder contains `Numpy` arrays of size `N x N` where each 
 To run experiments with different weight matrices/communication patterns or sizes, save the corresponding mixing matrix in this directory
 
 #### init_weights
-The `init_weights` directory contains the initial parameters for each agent, for each random seed, used in the experiments. These are only uploaded for sake of completeness; to remove the need to save initial weights for future experiments, comment lines...
+The `init_weights` directory contains the initial parameters for each agent, for each random seed, used in the experiments. These are only uploaded for sake of completeness; to remove the need to save initial weights for future experiments, comment lines containing
+```
+[torch.tensor(init_weights[i]).to(self.device) for i in range(len(init_weights))]
+```
+and replace with
+```
+[p.data.detach().clone() for p in self.model.parameters()]
+```
 
 #### models
 The `models` folder contains the neural network architectures used in the experiments
