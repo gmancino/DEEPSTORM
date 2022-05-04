@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-Test DEEPSTORM v1-SG on the decenralized consensus optimization problem
+Test DEEPSTORM v2 on the decenralized consensus optimization problem
 
 """
 

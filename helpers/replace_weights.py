@@ -39,7 +39,6 @@ class Opt(torch.optim.Optimizer):
         """
 
         # Closure could be used outside of the training loop to reevaluate model in place
-        # Issue is the parameters do not change unless we change them here...
         loss = None
         if closure is not None:
             with torch.enable_grad():
