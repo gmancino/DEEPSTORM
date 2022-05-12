@@ -1,7 +1,7 @@
 # DEEPSTORM
 ---
 
-This document provides instructions on how to reproduce the experimental results from ["Proximal Stochastic Recursive Momentum Methods For Composite Decentralized Optimization"](). Covered in this document is:
+This document provides instructions on how to reproduce the experimental results from ["Proximal Stochastic Recursive Momentum Methods for Nonconvex Composite Decentralized Optimization"](). Covered in this document is:
 
 - package requirements utilized in the experiments
 - instructions on how to reproduce the results from the paper (i.e. hyperparameter settings, etc.)
