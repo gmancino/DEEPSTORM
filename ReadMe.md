@@ -1,14 +1,13 @@
-# DEEPSTORM
+# DEEPSTORM: DEcEntralized Proximal STOchastic Recursive Momentum
 ---
 
-This document provides instructions on how to reproduce the experimental results from ["Proximal Stochastic Recursive Momentum Methods for Nonconvex Composite Decentralized Optimization"](). Covered in this document is:
+This document provides instructions on how to reproduce the experimental results from ["Proximal Stochastic Recursive Momentum Methods for Nonconvex Composite Decentralized Optimization"](). Covered in this document are:
 
 - package requirements utilized in the experiments
 - instructions on how to reproduce the results from the paper (i.e. hyperparameter settings, etc.)
 - a description of the main components in this repository, their use, and how to modify them for new use cases
 
 ## Experiment set-up
----
 
 Experiments were ran on clusters of 8 NVIDIA Tesla V100's (each with 32 GiB HBM) connected by dual 100 Gb EDR Infiniband. The operating system utilized is [CentOS](https://www.centos.org) 7 and all experiments are ran within a conda version 4.9.2 environment. All code is written in Python version 3.7.9, using `PyTorch` version 1.6.0 with CUDA version 10.2; for instructions on how to install PyTorch with CUDA see [here](https://pytorch.org/get-started/previous-versions/). The GCC version of the system utilized is 4.8.5. To perform neighbor communication, `mpi4py` was utilized; see [here](https://mpi4py.readthedocs.io/en/stable/install.html) for instructions on how to install this package.
 
@@ -16,7 +15,6 @@ A complete list of packages necessary for completing the experiments is located 
 
 
 ## Running experiments
----
 
 For sake of example, we will use `deepstormv1.py` as our test method here; see the `methods` folder for the other methods utilized in the experiments
 
@@ -87,7 +85,7 @@ Append `--trial=i` for `i=1,2,...,10` to the above code to record outputs across
 
 
 ## Repository summary
----
+
 This repository contains the following directories and files:
 ```
 data/
@@ -134,3 +132,18 @@ The `models` folder contains the neural network architectures used in the experi
 
 #### methods
 The `methods` folder contains all of the different decentralized optimization methods compared in this work; see the paper for a list of those compared here
+
+
+## Citation
+
+Please cite our paper if you use this code in your work:
+
+```
+@inproceedings{mancinoball2023deepstorm,
+    title={Proximal Stochastic Recursive Momentum Methods for Nonconvex Composite Decentralized Optimization},
+    author={Gabriel Mancino-Ball and Shengnan Miao and Yangyang Xu and Jie Chen},
+    booktitle={The Thirty-Seventh {AAAI} Conference on Artificial Intelligence, {AAAI} 2023},
+    publisher={{AAAI} Press},
+    year={2023}
+}
+```
